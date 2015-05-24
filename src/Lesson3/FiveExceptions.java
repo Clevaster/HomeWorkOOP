@@ -8,9 +8,8 @@ import java.util.HashMap;
  * Created by Lena on 24.05.2015.
  */
 
-/*2.Найти в стандартной библиотеке 5 классов, методы которых
-        кидают исключения и написать пример кода для их обработки
-        (пример: Integer.parseInt).*/
+/*2. Find five standard library classes, whose methods throw an exception
+and write a sample code for their processing. */
 
 public class FiveExceptions {
     public static void main(String[] args) {
@@ -55,7 +54,7 @@ public class FiveExceptions {
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Out of the list bounds");
         }
- /*3       Написать аналог Integer.parseInt. Использовать исключения.*/
+ /*3   ---------- Integer.parseInt analog throw Exception*/
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
