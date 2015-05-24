@@ -16,15 +16,20 @@ public class URLParse {
     public static void main(String[] args) {
 
         String url = "para1=value1&param2=value2&param3=value3";
+
         try {
-            System.out.println(parseURL(url)); // IT'S WRONG!! DON'T UNDERSTAND HOW TO CALL THIS METHOD CORRECTLY
+            HashMap<String, String> map = parseURL(url);
+            for (Map.Entry<String, String> pair : map.entrySet()) {
+                System.out.println(pair.getKey() + " " + pair.getValue());
+            }
+
         } catch (URLParseException e) {
             e.getMessage();
         }
+
     }
 
-    public static HashMap<String, String> parseURL(String url) throws URLParseException
-    {
+    public static HashMap<String, String> parseURL(String url) throws URLParseException {
 
         String[] firstParse = url.split("&");
         Map<String, String> result = new HashMap<>();
@@ -33,8 +38,7 @@ public class URLParse {
 
             String[] secondParse = firstParse[i].split("=");
             result.put(secondParse[0], secondParse[1]);
-          throw new URLParseException("Wrong format");
-        }
+             }
 
         return (HashMap<String, String>) result;
     }
