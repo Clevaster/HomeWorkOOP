@@ -1,5 +1,6 @@
 # HomeWorkOOP
 for HomeWork (prog.kiev.ua)
+
 Homework:
 1. Написать своего наследника Developer. Добавить его в
 существующий проект.
