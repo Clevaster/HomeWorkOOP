@@ -8,14 +8,12 @@ import java.util.Map;
  */
 public class URLParse {
 /*
-    Написать метод разбора списка параметров в формате URL:
-    para1=value1&param2=value2&param3=value3. В случае ошибки в
-    формате бросать исключение.
+    URL:
+    para1=value1&param2=value2&param3=value3.
+
 */
 
     public static void main(String[] args) {
-
-        // не понятно как вызвать parseURL(String url)  метод!!!
 
         String url = "para1=value1&param2=value2&param3=value3";
         try {
