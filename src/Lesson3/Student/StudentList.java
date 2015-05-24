@@ -23,6 +23,15 @@ public class StudentList {
         return -1;
     }
 
+    public int findSurname(String name) {
+        for (int i = 0; i < p; i++) {
+            if (list[i].getSurname().equalsIgnoreCase(name))
+                return i;
+        }
+
+        return -1;
+    }
+
 /*	2) remove student-------------------------------------------------------*/
 
     public void remove(int n) {
