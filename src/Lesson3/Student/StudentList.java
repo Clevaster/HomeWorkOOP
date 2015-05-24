@@ -1,5 +1,7 @@
 package Lesson3.Student;
 
+import java.text.SimpleDateFormat;
+
 public class StudentList {
     private Student[] list = new Student[100];
     private int p = 0;
@@ -21,22 +23,28 @@ public class StudentList {
         return -1;
     }
 
-/*	2) была возможность удалять
-    студента по номеру */
+/*	2) remove student-------------------------------------------------------*/
 
     public void remove(int n) {
-        Student[] listtemp = new Student[list.length - 1];
-        System.arraycopy(list, 0, listtemp, 0, n - 1);
-        System.arraycopy(list, n + 1, listtemp, n, list.length - n - 1);
-        list = listtemp;
+
+        System.out.println(list[n].getName() + " " + list[n].getSurname() + " was removed from list");
+        Student[] listTemp = new Student[100];
+
+        System.arraycopy(list, 0, listTemp, 0, n);
+        System.arraycopy(list, n + 1, listTemp, n, list.length - n - 1);
+
+        list = listTemp;
+
 
     }
 
+
     public void printAll() {
-        for (int n = 0; n < 100; n++) {
-            System.out.println(list[n].getName()
-                    + " " + list[n].getSurname() +
-                    ": " + list[n].getBirth().toString());
-        }
+        System.out.println("-----List of students----");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        for (Student s : list)
+            System.out.println(s.getName()
+                    + " " + s.getSurname() +
+                    ": " + dateFormat.format(s.getBirth()));
     }
 }

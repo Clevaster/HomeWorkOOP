@@ -14,8 +14,7 @@ public class MyClass {
         sl.add(new Student("Seva", "Evgienko", new Date(1986, 1, 1)));
         sl.add(new Student("Vasya", "Pupkin", new Date(1970, 3, 28)));
 
-//1)список вводился с клавиатуры____________________________________________________
-
+//--------From console throws Exception ------------------
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
@@ -24,40 +23,65 @@ public class MyClass {
                 String name1 = reader.readLine();
                 System.out.println("Enter Surname");
                 String surname1 = reader.readLine();
-                System.out.println("Enter birth in format yyyy, mm, dd");
-                String forDat1e = reader.readLine();
+                System.out.println("Enter birth in format dd.MM.yyyy");
+                String forDate = reader.readLine();
 
-                Date date1 = new Date(forDat1e);
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+                Date date1 = dateFormat.parse(forDate);
+
                 sl.add(new Student(name1, surname1, date1));
-/*  3) при введении неправильных данных (пустое имя, неправильная дата) программа кидала исключение
-     и обрабатывала его с выводом соотв. сообщений на экран.*/
+
+
             } catch (Exception e) {
-                System.out.println("Wrong name, surname od birth.");
+                System.out.println("Wrong name, surname or birthDate.");
+                break;
             }
-
-
-
-//Find by name____________________________________________________
-            int n = sl.find("Seva");
-            System.out.println(sl.get(n).getName()
-                    + " " + sl.get(n).getSurname() +
-                    ": " + sl.get(n).getBirth().toString());
-
-            sl.remove(n);
-            sl.printAll();
-
-
-
-
-//Why?????????? 3886.02.01__Что то не так с датой в принципе____________________________________
-//       SimpleDateFormat formatDate = new SimpleDateFormat("yyyy.MM.dd");
-//       System.out.println(formatDate.format(sl.get(n).getBirth()));
-//______________________________________________________________-
-
         }
 
 
+        int n = sl.find("Seva");
+        System.out.println("Find by name - " + sl.get(n).getName()
+                + " " + sl.get(n).getSurname() +
+                ": " + sl.get(n).getBirth().toString());
+
+        sl.remove(n);
+
+        try {
+            sl.printAll();
+        } catch (Exception e) {
+            System.out.println("-----------End-----------");
+        }
+
     }
 
-
 }
+
+
+
+
+/*--------------------------------------------System.arraycopy
+        int arr1[] = { 0, 1, 2, 3, 4, 5, 6 };
+        int arr2[] = { 0, 1, 2, 3, 4, 5, 6};
+
+        int x = 4;
+
+        int arr3[] = {01, 10, 20, 30, 40, 50, 60};
+
+        // copies an array from the specified source array
+        System.arraycopy(arr1, 0, arr3, 0, x);
+        System.arraycopy(arr2, x+1, arr3, x, arr2.length-x-1);
+        System.out.print("array3 = ");
+        System.out.print(arr3[0] + " ");
+        System.out.print(arr3[1] + " ");
+        System.out.print(arr3[2] + " ");
+        System.out.print(arr3[3] + " ");
+        System.out.print(arr3[4] + " ");
+        System.out.print(arr3[5] + " ");
+        System.out.print(arr3[6] + " ");      */
+
+
+
+
+
+
+
