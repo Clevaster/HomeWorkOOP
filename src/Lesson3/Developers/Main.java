@@ -25,9 +25,8 @@ public class Main {
         }
 
         System.out.println("2.-------------------------");
-/*2. Create the list of developers with salary more then 1500 y.e.
-Создать список разработчиков и заполнить его случайным образом.
- Вывести на экран только Senior developer-ов с зарплатой больше 1500 у.е.*/
+//2. Create the list of developers with salary more then 1500 y.e.
+
 
         Developer[] list2 = {
 
@@ -63,8 +62,7 @@ public class Main {
                 System.out.println("TeamLead " + x.getName() + ", salary: " + x.getSalary());
         }
 
-/* 4. Написать программу, которая будет рисовать на консоли
-прямоугольник с заданными длинами сторон.*/
+/* 4. Rectangle*/
         System.out.println("4.-------------------------");
 
   /*      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

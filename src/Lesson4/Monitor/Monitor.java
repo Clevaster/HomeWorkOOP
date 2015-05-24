@@ -15,10 +15,12 @@ public class Monitor {
     }
 
     public void start() {
+
         while (true) {
 
-            for (int i = 0; i < fileNameList.size() - 1; i++) {
+            for (int i = 0; i < fileNameList.size(); i++) {
                 File f = new File(fileNameList.get(i));
+
                 if (f.exists() && f.isFile()) {
                     if (event != null)
                         event.onFileAdded(f);
