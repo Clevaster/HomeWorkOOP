@@ -17,7 +17,7 @@ public class URLParse {
 
         String url = "para1=value1&param2=value2&param3=value3";
         try {
-            System.out.println(parseURL(url)); //IT'S WRONG!! DON'T UNDERSTAND HOW TO CALL THIS METHOD CORRECTLY
+            System.out.println(parseURL(url)); // IT'S WRONG!! DON'T UNDERSTAND HOW TO CALL THIS METHOD CORRECTLY
         } catch (URLParseException e) {
             e.getMessage();
         }
