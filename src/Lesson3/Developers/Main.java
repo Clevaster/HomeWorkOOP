@@ -25,7 +25,8 @@ public class Main {
         }
 
         System.out.println("2.-------------------------");
-/*2. Создать список разработчиков и заполнить его случайным образом.
+/*2. Create the list of developers with salary more then 1500 y.e.
+Создать список разработчиков и заполнить его случайным образом.
  Вывести на экран только Senior developer-ов с зарплатой больше 1500 у.е.*/
 
         Developer[] list2 = {
