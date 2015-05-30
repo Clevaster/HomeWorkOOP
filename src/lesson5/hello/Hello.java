@@ -33,10 +33,8 @@ public class Hello {
                 byte[] out = text1234.getBytes();
                 fos.write(out);
 
-
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

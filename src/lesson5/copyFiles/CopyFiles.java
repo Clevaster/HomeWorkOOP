@@ -1,6 +1,5 @@
 package lesson5.copyFiles;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import util.Constants;
 
 import java.io.File;
@@ -33,8 +32,7 @@ public class CopyFiles {
                         System.out.println(f.getName() + " is successfully copied to" + dest);
                     } catch (FileAlreadyExistsException e) {
                         System.out.println("Error: " + f.getName() + " is already exists in" + dest);
-                    }
-                    catch (IOException e) {
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
