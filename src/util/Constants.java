@@ -5,5 +5,6 @@ package util;
  */
 public interface Constants {
     String FILE_PATH_3 = "src/resources/lesson4";
+    String FILE_PATH_5 = "src/resources/lesson5";
 
 }
