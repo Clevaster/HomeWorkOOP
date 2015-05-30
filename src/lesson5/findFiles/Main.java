@@ -60,7 +60,7 @@ public class Main {
 
 		try {
 
-			findFiles(Constants.FILE_PATH_3,".txt", list);
+			findFiles(Constants.FILE_PATH_4,".txt", list);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -78,7 +78,7 @@ public class Main {
 		List<String> result = new ArrayList<>();
 
 		try {
-			findFilesFromList(Constants.FILE_PATH_3, filter, result);
+			findFilesFromList(Constants.FILE_PATH_4, filter, result);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
