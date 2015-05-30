@@ -7,40 +7,48 @@ import java.util.Map;
  * Created by Lena on 23.05.2015.
  */
 public class URLParse {
-/*
-    URL:
-    para1=value1&param2=value2&param3=value3.
-
-*/
 
     public static void main(String[] args) {
-
         String url = "para1=value1&param2=value2&param3=value3";
+        String url2 = "p&param2=value2&param3=value3";
 
         try {
-            HashMap<String, String> map = parseURL(url);
-            for (Map.Entry<String, String> pair : map.entrySet()) {
-                System.out.println(pair.getKey() + " " + pair.getValue());
-            }
+            Map<String, String> map = parseURL(url);
+            System.out.println(map);
 
         } catch (URLParseException e) {
             e.getMessage();
         }
 
+        try {
+            Map<String, String> map = parseURL(url2);
+            System.out.println(map);
+
+        } catch (URLParseException e) {
+            System.out.println("Wrong");
+        }
     }
 
-    public static HashMap<String, String> parseURL(String url) throws URLParseException {
+    //method returns abstract
+    public static Map<String, String> parseURL(String url) throws URLParseException {
 
+        //split by & into array
         String[] firstParse = url.split("&");
+
+        //create map to save result
         Map<String, String> result = new HashMap<>();
 
-        for (int i = 0; i < firstParse.length; i++) {
 
+        for (String a : firstParse) {
 
-            String[] secondParse = firstParse[i].split("=");
+            //!!!!Don't print throws exception!!!
+
+            if (!a.contains("=")) throw new URLParseException("Wrong URL");
+            String[] secondParse = a.split("=");
+
             result.put(secondParse[0], secondParse[1]);
-             }
+        }
 
-        return (HashMap<String, String>) result;
+        return result;
     }
 }

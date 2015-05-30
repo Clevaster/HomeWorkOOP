@@ -20,6 +20,10 @@ public class MyClass {
             try {
                 System.out.println("Enter Name");
                 String name1 = reader.readLine();
+                // метод для проверки на выход
+                if (checkForQuit(name1))
+                    break;
+
                 System.out.println("Enter Surname");
                 String surname1 = reader.readLine();
                 System.out.println("Enter birth in format dd.MM.yyyy");
@@ -51,6 +55,10 @@ public class MyClass {
             System.out.println("-----------End-----------");
         }
 
+    }
+    //сравниваем литерал со значением, а не наоборот
+    public static boolean checkForQuit(String str){
+        return "q".equals(str);
     }
 
 }

@@ -1,6 +1,8 @@
 package lesson3.student;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StudentList {
     private Student[] list = new Student[100];
@@ -23,13 +25,33 @@ public class StudentList {
         return -1;
     }
 
-    public int findSurname(String name) {
+  /*  public Student findByName(String name){
+        for (int i = 0; i <list.length ; i++) {
+            if (list[i].getName().equalsIgnoreCase(name))
+                return list[i];
+            else return null; //???????
+        }
+    }*/
+
+
+    public List<Student> findByName(String name) {
+        List<Student> result = new ArrayList<>();
         for (int i = 0; i < p; i++) {
-            if (list[i].getSurname().equalsIgnoreCase(name))
-                return i;
+            if (list[i].getName().equalsIgnoreCase(name))
+                result.add(list[i]);
         }
 
-        return -1;
+        return result;
+    }
+
+    public List<Student> findbBySurname(String surname) {
+        List<Student> result = new ArrayList<>();
+        for (int i = 0; i < p; i++) {
+            if (list[i].getName().equalsIgnoreCase(surname))
+                result.add(list[i]);
+        }
+
+        return result;
     }
 
 /*	2) remove student-------------------------------------------------------*/
@@ -43,8 +65,6 @@ public class StudentList {
         System.arraycopy(list, n + 1, listTemp, n, list.length - n - 1);
 
         list = listTemp;
-
-
     }
 
 

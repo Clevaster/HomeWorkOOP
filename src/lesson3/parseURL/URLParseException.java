@@ -7,17 +7,11 @@ package lesson3.parseURL;
 //__________
 //4. My Exception
 
-
 public class URLParseException extends Exception {
-
 
     public URLParseException(String message) {
         super(message);
     }
 
-    @Override
-    public String getMessage() {
-        return "URLParseException:" + super.getMessage();
-    }
 
 }
