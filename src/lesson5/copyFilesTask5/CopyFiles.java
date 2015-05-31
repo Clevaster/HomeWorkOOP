@@ -3,8 +3,6 @@ package lesson5.copyFilesTask5;
 import util.Constants;
 
 import java.io.*;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.Files;
 
 /**
  * Created by Yana Vayzer on 31.05.2015.
