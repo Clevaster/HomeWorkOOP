@@ -13,6 +13,8 @@ import java.util.Vector;
 public class Sequence {
     public static void main(String[] args) {
 
+        int cc;
+
         Vector<String> files = new Vector<>();
         files.addElement(Constants.FILE_PATH_5 + "/task6/1.txt");
         files.addElement(Constants.FILE_PATH_5 + "/task6/2.txt");
@@ -21,8 +23,8 @@ public class Sequence {
         InputStream input = new SequenceInputStream(new InputStreamEnum(files));
 
         try (FileOutputStream write = new FileOutputStream((Constants.FILE_PATH_5 + "/task6/all.txt"))) {
-            while (input.read() != -1) {
-                write.write(input.read());
+            while ((cc = input.read()) != -1) {
+                write.write(cc);
             }
         } catch (IOException e) {
             e.printStackTrace();
