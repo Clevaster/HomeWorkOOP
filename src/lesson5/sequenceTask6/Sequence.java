@@ -20,16 +20,13 @@ public class Sequence {
 
         InputStream input = new SequenceInputStream(new InputStreamEnum(files));
 
-
         try (FileOutputStream write = new FileOutputStream((Constants.FILE_PATH_5 + "/task6/all.txt"))) {
             while (input.read() != -1) {
                 write.write(input.read());
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private static class InputStreamEnum implements Enumeration<FileInputStream> {
