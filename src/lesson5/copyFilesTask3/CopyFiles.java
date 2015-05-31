@@ -1,4 +1,4 @@
-package lesson5.copyFiles;
+package lesson5.copyFilesTask3;
 
 import util.Constants;
 
@@ -28,6 +28,14 @@ public class CopyFiles {
             for (File f : srcArr) {
                 if (f.isFile()) {
                     try {
+                        /**copy
+                         *  @param   source
+                         *         the path to the file to copy
+                         * @param   target
+                         *          the path to the target file (may be associated with a different
+                         *          provider to the source path)
+                         * @param   options
+                         *          options specifying how the copy should be done*/
                         Files.copy(f.toPath(), dest.toPath().resolve(f.getName()));
                         System.out.println(f.getName() + " is successfully copied to" + dest);
                     } catch (FileAlreadyExistsException e) {

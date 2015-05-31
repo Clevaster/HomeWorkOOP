@@ -1,9 +1,8 @@
-package lesson5.hello;
+package lesson5.helloTask2;
 
 import util.Constants;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 

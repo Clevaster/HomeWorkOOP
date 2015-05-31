@@ -1,4 +1,4 @@
-package lesson5.findFiles;
+package lesson5.findFilesTask1;
 
 import util.Constants;
 
