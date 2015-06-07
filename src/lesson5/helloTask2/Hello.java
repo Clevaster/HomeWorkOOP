@@ -2,9 +2,7 @@ package lesson5.helloTask2;
 
 import util.Constants;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by Yana Vayzer on 30.05.2015.
@@ -13,6 +11,29 @@ import java.io.IOException;
 public class Hello {
     public static void main(String[] args) {
 
+        String str;
+        StringBuilder text = new StringBuilder();
+        String file = Constants.FILE_PATH_5 + "/1234.txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            while ((str = br.readLine()) != null) {
+                text.append(str);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        str =  text.toString().replaceAll("[Hh]ello", "1234");
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+
+            bw.write(str);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+/*
         //reading stream
 
         try (FileInputStream fisReader = new FileInputStream(Constants.FILE_PATH_5 + "/1234.txt")) {
@@ -50,7 +71,7 @@ public class Hello {
             e1.printStackTrace();
         }
 
-
+*/
 
     }
 }

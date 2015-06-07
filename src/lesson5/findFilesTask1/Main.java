@@ -10,6 +10,8 @@ import java.util.List;
 
 public class Main {
 
+    //  boolean accept(File dir, String name);
+
     static class MyFileFilter implements FilenameFilter {
         private String ext;
 
@@ -22,70 +24,34 @@ public class Main {
         }
     }
 
-    private static void findFiles(String srcPath, String ext, ArrayList<String> list) throws IOException {
-        //Directory
-        File dir = new File(srcPath);
-
-        //Array of filtered results
-        File[] files = dir.listFiles(new MyFileFilter(ext));
-
-        //Add results to List
-        for (File file : files) {
-            list.add(srcPath + file.getName());
-        }
-    }
-// 1.------------------------------------------------------------------------
-
-    /**
+    /*
      * @param srcPath sourse directory
      * @param filter  list of extensions
-     * @param result  for list of path
+     *
      */
-    public static void findFilesFromList(String srcPath, List<String> filter, List<String> result) throws IOException {
+    public static List<String> findFilesFromList(String srcPath, List<String> filter) throws IOException {
 
         File dir = new File(srcPath);
-
+        List<String> result = new ArrayList<>();
 
         for (int i = 0; i < filter.size(); i++) {
             File[] nextExtension = dir.listFiles(new MyFileFilter(filter.get(i)));
             for (File f : nextExtension)
                 result.add(srcPath + "/" + f.getName());
         }
-
+        return result;
     }
 
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
-
-        try {
-
-            findFiles(Constants.FILE_PATH_4, ".txt", list);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        for (String s : list)
-            System.out.println(s);
-
-        System.out.println("--------------------------------");
-
-
-// 1.------------------------------------------------------------------------
         List<String> filter = new ArrayList<>(2);
         filter.add(".txt");
         filter.add(".doc");
-        List<String> result = new ArrayList<>();
-
         try {
-            findFilesFromList(Constants.FILE_PATH_4, filter, result);
+            List<String> result = findFilesFromList(Constants.FILE_PATH_4, filter);
+            result.forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        for (String s : result)
-            System.out.println(s);
-
-
     }
 
 }
